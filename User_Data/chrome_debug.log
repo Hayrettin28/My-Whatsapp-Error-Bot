@@ -1,0 +1,15 @@
+[11888:19576:0708/085957.863:WARNING:chrome_main_delegate.cc(593)] This is Chrome version 114.0.5735.110 (not a warning)
+[11888:19576:0708/085957.878:INFO:chrome_browser_cloud_management_controller.cc(167)] Starting CBCM Controller Initialization
+[11888:19576:0708/085957.878:INFO:chrome_browser_cloud_management_controller.cc(195)] No machine level policy manager exists.
+[11888:19576:0708/085958.446:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Feature xr-spatial-tracking's parameters are ignored.", source:  (0)
+[11888:19576:0708/085958.446:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'attribution-reporting'.", source:  (0)
+[11888:19576:0708/085958.446:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'compute-pressure'.", source:  (0)
+[11888:19576:0708/085958.446:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'interest-cohort'.", source:  (0)
+[11888:19576:0708/085958.446:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'private-state-token-issuance'.", source:  (0)
+[11888:19576:0708/085958.446:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'shared-storage'.", source:  (0)
+[11888:19576:0708/085958.446:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'shared-storage-select-url'.", source:  (0)
+[11888:19576:0708/085958.446:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'private-state-token-redemption'.", source:  (0)
+[11888:19576:0708/085958.446:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Origin trial controlled feature not enabled: 'unload'.", source:  (0)
+[11888:19576:0708/085958.446:INFO:CONSOLE(0)] "Document-Policy HTTP header: Unrecognized document policy feature name include-js-call-stacks-in-crash-reports.", source: https://web.whatsapp.com/ (0)
+[11888:19576:0708/085958.610:INFO:CONSOLE(163)] "Event handler of 'x-storagemutated-1' event must be added on the initial evaluation of worker script.", source: https://static.whatsapp.net/rsrc.php/v4/yz/r/LZm-OU8j4Bn.js (163)
+[11888:19576:0708/090039.858:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.

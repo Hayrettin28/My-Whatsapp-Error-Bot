@@ -1,0 +1,1620 @@
+{
+  "metadata": {
+    "document": "STEP 7 Error Codes Manual",
+    "version": "01/2014",
+    "total_pages": 39,
+    "total_errors": 214,
+    "categories": [
+      "Communication",
+      "Hardware Configuration",
+      "Programming",
+      "System/Licensing",
+      "Network",
+      "Diagnostics"
+    ]
+  },
+  "errors": [
+    {
+      "error_code": "1:2063",
+      "title": "TBI error during function chdir",
+      "cause": "Occurs with the call AUTgetHWObjects. There should be an AUT API tracer in the meantime.",
+      "solution": "Not explicitly provided in the document.",
+      "category": "Programming"
+    },
+    {
+      "error_code": "76160",
+      "title": "CPU connection limitation",
+      "cause": "Attempt to connect CPUs through unsupported bus type",
+      "solution": "Split data paths into separate circuits using only one bus type per circuit",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "11:103",
+      "title": "CPU information unreadable",
+      "cause": "Module not properly configured or addressed",
+      "solution": "Check logical address, slot configuration, and module status",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "13:31",
+      "title": "PG-module connection failure",
+      "cause": [
+        "Faulty connection hardware (cables)",
+        "Module in wrong operating mode",
+        "Incorrect MPI address configuration"
+      ],
+      "solution": [
+        "Check and repair physical connections",
+        "Set module to correct operating mode",
+        "Verify and correct MPI address in STEP 7 configuration"
+      ],
+      "category": "Communication",
+      "urgency": "High"
+    },
+    {
+      "error_code": "13:32",
+      "title": "HW configuration receiver error",
+      "cause": [
+        "Connection hardware failure",
+        "Module operating mode issue",
+        "Memory constraints on module"
+      ],
+      "solution": [
+        "Check connection cables and terminations",
+        "Verify module operating mode",
+        "Clear memory space on module"
+      ],
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "13:48",
+      "title": "Station generation error",
+      "cause": [
+        "Write-protected project directory",
+        "Network drive connection issues",
+        "Insufficient disk space"
+      ],
+      "solution": [
+        "Remove write protection from project directory",
+        "Re-establish network connection",
+        "Free up disk space"
+      ],
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "13:76",
+      "title": "Inconsistent hardware configuration",
+      "cause": "Configuration mismatch in programming device",
+      "solution": "Run 'Check Consistency' in HW Config and verify S7TMP folder settings",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "13:77",
+      "title": "SDB interpretation error",
+      "cause": "Inconsistent HW configuration in module from previous loading",
+      "solution": "Install required options package for configuring specific modules",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "13:136",
+      "title": "Slave slot limit exceeded",
+      "cause": "More slaves configured than permitted by master system",
+      "solution": "Split slaves across different segments or reduce number of slaves",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "13:181",
+      "title": "Multicomputing type error",
+      "cause": "Error in HW Config of first 4.02.x version",
+      "solution": "Add another CPU and delete it to reset to single-computing",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "13:422",
+      "title": "Missing master system for DP slave",
+      "cause": "Master system not assigned to DP slave",
+      "solution": "Right-click to add master system and reconfigure CP as slave",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "13:520",
+      "title": "Address conflict",
+      "cause": "Entered address already occupied",
+      "solution": "Confirm suggested address or enter new address",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "13:4003",
+      "title": "Invalid module insertion",
+      "cause": "Attempt to connect non-DP slave device directly to DP bus",
+      "solution": "Insert hierarchy level for device as DP slave in HW catalog",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "13:4040",
+      "title": "Slot limit exceeded",
+      "cause": "Maximum number of modules already configured",
+      "solution": "Delete slaves or their modules to free up slots",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "13:4241",
+      "title": "Offline/online configuration mismatch",
+      "cause": "External module from Phoenix company slotted",
+      "solution": "Remove external module (error can be ignored)",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "13:4337",
+      "title": "Module connection failure",
+      "cause": [
+        "Faulty connection hardware",
+        "Module in wrong operating mode",
+        "Incorrect MPI address"
+      ],
+      "solution": [
+        "Check physical connections",
+        "Verify operating mode",
+        "Correct MPI address and retry"
+      ],
+      "category": "Communication"
+    },
+    {
+      "error_code": "13:4343",
+      "title": "Update blocked",
+      "cause": "GSE/type files referenced in open STEP 7 applications",
+      "solution": "Close station windows and other STEP 7 applications accessing GSD files",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "13:4341",
+      "title": "GSE file syntax error",
+      "cause": "GSD file contains errors (e.g., name >23 characters)",
+      "solution": "Edit GSD file to correct syntax errors and re-incorporate",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "13:4366",
+      "title": "Module restart error",
+      "cause": [
+        "Not all CPUs of multicomputing station started",
+        "CPU/FM key switch in STOP position",
+        "CP operating mode switch in STOP position"
+      ],
+      "solution": [
+        "Start all modules of multicomputing station",
+        "Set key switch to RUN/RUN-P",
+        "Set CP operating mode to RUN"
+      ],
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "13:4589",
+      "title": "SDB 7XX load failure",
+      "cause": "High-availability S7 connection configuration changed in STEP 7 V5.1",
+      "solution": "Delete System Data folder and regenerate in NetPro",
+      "category": "Network"
+    },
+    {
+      "error_code": "15:20533",
+      "title": "Debug info limit reached",
+      "cause": "Max debug info length (64KB) exceeded due to excessive DB accesses",
+      "solution": "Reduce debug info by limiting data block accesses",
+      "category": "Programming"
+    },
+    {
+      "error_code": "16:5016",
+      "title": "Parameter control error",
+      "cause": [
+        "Operand address outside permitted range",
+        "No module available for operand outside process image",
+        "DB not in CPU or write-protected"
+      ],
+      "solution": [
+        "Comment out problematic line in VAT",
+        "Control operands inside process image",
+        "Load DB into CPU or remove write protection"
+      ],
+      "category": "Programming"
+    },
+    {
+      "error_code": "16:5053",
+      "title": "I/O control restriction",
+      "cause": "Attempt to control/monitor I/Os in Process Mode",
+      "solution": "Monitor process image or switch CPU to Test Mode",
+      "category": "Programming"
+    },
+    {
+      "error_code": "30:13",
+      "title": "Block interface changed",
+      "cause": "Parameters not transferred properly after interface change",
+      "solution": "Update block call to match new interface (Edit>Block Call>Update)",
+      "category": "Programming"
+    },
+    {
+      "error_code": "30:15",
+      "title": "Timestamp mismatch",
+      "cause": "Type object has different timestamp than opened block",
+      "solution": "Ensure block consistency between online/offline versions",
+      "category": "Programming"
+    },
+    {
+      "error_code": "30:50",
+      "title": "STL generation error",
+      "cause": [
+        "STL source exists and is write-protected",
+        "Insufficient disk space"
+      ],
+      "solution": [
+        "Generate source with new name",
+        "Free up disk space"
+      ],
+      "category": "Programming"
+    },
+    {
+      "error_code": "30:484",
+      "title": "Block version mismatch",
+      "cause": "Offline block doesn't match CPU block (timestamp difference)",
+      "solution": "Download displayed block to CPU or update offline version",
+      "category": "Programming"
+    },
+    {
+      "error_code": "30:504",
+      "title": "Parameter name conflict",
+      "cause": "Timestamp conflict between block interface and parameter descriptions",
+      "solution": "Ensure interface changes are properly saved and loaded",
+      "category": "Programming"
+    },
+    {
+      "error_code": "30:53",
+      "title": "STL source generation failure",
+      "cause": "Protected blocks in selection list",
+      "solution": "Regenerate selection list excluding protected blocks",
+      "category": "Programming"
+    },
+    {
+      "error_code": "30:202",
+      "title": "Block existence check",
+      "cause": "Need to verify block exists both online and offline",
+      "solution": "Save project under different name",
+      "category": "Programming"
+    },
+    {
+      "error_code": "30:473",
+      "title": "Invalid operation position",
+      "cause": "Programming error",
+      "solution": "Correct the code",
+      "category": "Programming"
+    },
+    {
+      "error_code": "30:503",
+      "title": "Missing type object",
+      "cause": "Block's type object not available",
+      "solution": "Ensure associated function block exists for instance DBs",
+      "category": "Programming"
+    },
+    {
+      "error_code": "32:282",
+      "title": "PG resource error",
+      "cause": "High resource usage during program status monitoring",
+      "solution": "Use status function from offline project",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:384",
+      "title": "Action execution blocked",
+      "cause": [
+        "Communications module busy with other settings",
+        "Other online functions active"
+      ],
+      "solution": [
+        "Check baud rate settings",
+        "Close other online functions"
+      ],
+      "category": "Communication"
+    },
+    {
+      "error_code": "33:496",
+      "title": "Function unavailable",
+      "cause": "Requested function not available in S7-DOS or CPU",
+      "solution": "Reinstall STEP 7",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:498",
+      "title": "Function not implemented",
+      "cause": "Internal error",
+      "solution": "Delete metafiles",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:501",
+      "title": "System error",
+      "cause": "Attempt to get online as normal user under WinNT",
+      "solution": "Use administrator rights",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:511",
+      "title": "Mixed installation error",
+      "cause": "Incompatible versions installed",
+      "solution": "Manually deinstall STEP 7 and S7 options packages",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:8242",
+      "title": "EPROM driver unsupported",
+      "cause": "Registry entry issues with programming interface",
+      "solution": "Delete incorrect registry directories (MCDCENT/MCDPG)",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:8256",
+      "title": "External prommer connection",
+      "cause": [
+        "Prommer not connected to configured LPT",
+        "Power supply interrupted",
+        "LPT port misconfigured"
+      ],
+      "solution": [
+        "Connect to correct LPT interface",
+        "Restore power supply",
+        "Set LPT to EPP in BIOS"
+      ],
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:16399",
+      "title": "S7OTBL server error",
+      "cause": "S7DOS server (S7otblsx.exe/S7otbxsx.exe) not starting",
+      "solution": "Check server files in path and shared memory allocation",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:16418",
+      "title": "STEP 7 frame timeout",
+      "cause": "Monitoring time for STEP 7 telegram expired",
+      "solution": "Check bus parameters and retry connection",
+      "category": "Communication"
+    },
+    {
+      "error_code": "33:16642",
+      "title": "Telegram configuration error",
+      "cause": "Incorrect telegram configuration during TeleService",
+      "solution": "Check modem connections and compatibility",
+      "category": "Communication"
+    },
+    {
+      "error_code": "33:16647",
+      "title": "Online connection interrupted",
+      "cause": "Communication failure",
+      "solution": "Check network connections and retry",
+      "category": "Communication"
+    },
+    {
+      "error_code": "33:16654",
+      "title": "Connection broken",
+      "cause": [
+        "Hardware connection interrupted",
+        "CPU power failure",
+        "Power-save mode active"
+      ],
+      "solution": [
+        "Check cables and network",
+        "Verify power supply",
+        "Disable power-save mode"
+      ],
+      "category": "Communication"
+    },
+    {
+      "error_code": "33:16656",
+      "title": "Station address mismatch",
+      "cause": "MPI address differs from actual network configuration",
+      "solution": "Verify MPI address settings and network configuration",
+      "category": "Network"
+    },
+    {
+      "error_code": "33:16662",
+      "title": "Connection rejected",
+      "cause": [
+        "Partner not CPU/CP",
+        "Connection limit reached",
+        "Missing SDBs for DP interface"
+      ],
+      "solution": [
+        "Verify partner module type",
+        "Close other connections",
+        "Configure CPU as DP master and load SDBs"
+      ],
+      "category": "Communication"
+    },
+    {
+      "error_code": "33:16914",
+      "title": "Station offline",
+      "cause": [
+        "S7 power off",
+        "Cable disconnected/defective",
+        "Bus parameter mismatch"
+      ],
+      "solution": [
+        "Check CPU power",
+        "Inspect MPI cable",
+        "Verify baud rate and highest station address"
+      ],
+      "category": "Communication"
+    },
+    {
+      "error_code": "33:16917",
+      "title": "Function unsupported",
+      "cause": "No user connected to CP 5412 A2 with 'only master' setting",
+      "solution": "Connect user to establish connection",
+      "category": "Communication"
+    },
+    {
+      "error_code": "33:16944",
+      "title": "No active contact",
+      "cause": [
+        "User not connected to bus",
+        "TS adapter power/configuration issue",
+        "Driver misconfiguration"
+      ],
+      "solution": [
+        "Check network connections",
+        "Verify TS adapter power and settings",
+        "Select correct driver"
+      ],
+      "category": "Communication"
+    },
+    {
+      "error_code": "33:17072",
+      "title": "No hardware found",
+      "cause": "No driver selected or incorrect MPI address area",
+      "solution": "Select/add driver in PG/PC interface settings",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:17074",
+      "title": "Driver configuration error",
+      "cause": "Invalid registry parameters or driver issues",
+      "solution": "Delete unnecessary drivers and reinstall/parameterize",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:17075",
+      "title": "Subnet configuration error",
+      "cause": [
+        "Interrupt conflict",
+        "Onboard controller IRQ occupation",
+        "Driver recognition issues"
+      ],
+      "solution": [
+        "Change interrupt setting",
+        "Disable controllers in BIOS",
+        "Select different interrupt for MPI card"
+      ],
+      "category": "Network"
+    },
+    {
+      "error_code": "33:17077",
+      "title": "Address conflict",
+      "cause": "TS adapter using default MPI address (0)",
+      "solution": "Assign unique MPI address to TS adapter",
+      "category": "Network"
+    },
+    {
+      "error_code": "33:17088",
+      "title": "Driver load failure",
+      "cause": "Communication driver file not found",
+      "solution": "Select card or install driver",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:17090",
+      "title": "Logical device missing",
+      "cause": "Registry entry missing or driver version mismatch",
+      "solution": "Verify registry entries and driver versions",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:17104",
+      "title": "Adapter version mismatch",
+      "cause": "Incompatible adapter/driver versions",
+      "solution": "Check adapter type and driver compatibility",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:17106",
+      "title": "TS adapter communication",
+      "cause": [
+        "No power supply to adapter",
+        "Defective connections",
+        "Adapter not configured"
+      ],
+      "solution": [
+        "Connect external power",
+        "Check hardware connections",
+        "Configure TS adapter in PG/PC interface"
+      ],
+      "category": "Communication"
+    },
+    {
+      "error_code": "33:17108",
+      "title": "Port in use",
+      "cause": "Another application using COM/USB port",
+      "solution": "Exit conflicting application or correct COM interface settings",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:17109",
+      "title": "Driver in use",
+      "cause": "Serial driver reserved by another application",
+      "solution": "Close TeleService/STEP 7 and restart in correct order",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:17110",
+      "title": "Modem connection required",
+      "cause": "TS adapter set for modem connection but none established",
+      "solution": "Establish modem connection or reselect available users",
+      "category": "Communication"
+    },
+    {
+      "error_code": "33:33540",
+      "title": "Resource limitation",
+      "cause": "Too few resources available during block read",
+      "solution": "Start trace for diagnosis",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "33:33794",
+      "title": "Illegal service request",
+      "cause": [
+        "CFB in wrong state",
+        "Printer error",
+        "CPU in wrong mode"
+      ],
+      "solution": [
+        "Check block call in user program",
+        "Verify printer status",
+        "Set CPU to RUN/RUN-P"
+      ],
+      "category": "Programming"
+    },
+    {
+      "error_code": "33:34562",
+      "title": "Unsupported service",
+      "cause": "Module doesn't support requested service",
+      "solution": "Check CPU restrictions and module documentation",
+      "category": "Programming"
+    },
+    {
+      "error_code": "33:42418",
+      "title": "RAM to ROM failure",
+      "cause": "Module doesn't support RAM to ROM function",
+      "solution": "Use more powerful module",
+      "category": "Programming"
+    },
+    {
+      "error_code": "33:53315",
+      "title": "Data error (D043)",
+      "cause": "Too many control jobs sent to CPU",
+      "solution": "Reduce control job frequency",
+      "category": "Programming"
+    },
+    {
+      "error_code": "33:53346",
+      "title": "Resource error (D062)",
+      "cause": "Job list full - VAT not closed properly",
+      "solution": "Power cycle CPU and delete unnecessary jobs",
+      "category": "Programming"
+    },
+    {
+      "error_code": "33:53347",
+      "title": "Resource error (D063)",
+      "cause": "Trigger event occupied - irregular process termination",
+      "solution": "Disconnect cable and restart programming device",
+      "category": "Programming"
+    },
+    {
+      "error_code": "33:53772",
+      "title": "Module restriction",
+      "cause": "Requested function exceeds module capabilities",
+      "solution": "Check module performance data and documentation",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "33:53790",
+      "title": "Module busy",
+      "cause": "Module assigning parameters to subordinate devices",
+      "solution": "Reset CP via Online HW Config or remove bus cable during download",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "33:53797",
+      "title": "DIOSDB structure error",
+      "cause": "Diagnostics address outside valid range",
+      "solution": "Change diagnostics address",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "33:53798",
+      "title": "CPU type mismatch",
+      "cause": "Incompatible CPU type or internal structure error",
+      "solution": "Match configured and actual CPU types, regenerate configuration",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "33:53824",
+      "title": "Coordination error (D204)",
+      "cause": "Variable table open during system data load",
+      "solution": "Close variable table and retransfer system data",
+      "category": "Programming"
+    },
+    {
+      "error_code": "33:59906",
+      "title": "Protocol mismatch",
+      "cause": "S7DOS and CP protocol versions incompatible",
+      "solution": "Upgrade CP to version supporting RPC 7 protocol",
+      "category": "Communication"
+    },
+    {
+      "error_code": "34:11",
+      "title": "Invalid handle",
+      "cause": "Monitoring empty network",
+      "solution": "Delete empty network",
+      "category": "Programming"
+    },
+    {
+      "error_code": "34:21",
+      "title": "Element not found",
+      "cause": "Element missing in referenced database",
+      "solution": "Check search key spelling and database reference",
+      "category": "Programming"
+    },
+    {
+      "error_code": "34:38",
+      "title": "Compiler error",
+      "cause": "General compilation failure",
+      "solution": "Review code for errors",
+      "category": "Programming"
+    },
+    {
+      "error_code": "34:39",
+      "title": "Variable name conflict",
+      "cause": "Attempt to rename to existing variable name",
+      "solution": "Choose unique name",
+      "category": "Programming"
+    },
+    {
+      "error_code": "34:152",
+      "title": "Reference data generation",
+      "cause": "Database error",
+      "solution": "Use 'Save As with reorganization'",
+      "category": "Programming"
+    },
+    {
+      "error_code": "34:168",
+      "title": "Protected modules",
+      "cause": "Reference modules are know-how protected",
+      "solution": "Deactivate 'Include reference blocks' option",
+      "category": "Programming"
+    },
+    {
+      "error_code": "34:173",
+      "title": "Symbol assignment changed",
+      "cause": "Copied symbolic block between projects",
+      "solution": "Generate STL source with absolute addressing first",
+      "category": "Programming"
+    },
+    {
+      "error_code": "34:178",
+      "title": "Invalid block call",
+      "cause": "Instance DB type mismatch in symbol list",
+      "solution": "Enter instance DB of FB type in symbol list",
+      "category": "Programming"
+    },
+    {
+      "error_code": "34:4321",
+      "title": "Program distribution",
+      "cause": "Program too large for single block",
+      "solution": "Distribute program across multiple blocks",
+      "category": "Programming"
+    },
+    {
+      "error_code": "34:4355",
+      "title": "Missing PLC type",
+      "cause": "Called/addressed block not available",
+      "solution": "Compile block first or copy SFB/SFC from library",
+      "category": "Programming"
+    },
+    {
+      "error_code": "34:4461",
+      "title": "Protected block",
+      "cause": "Attempt to generate KNOW_HOW_PROTECT block to STL",
+      "solution": "Exclude protected blocks from generation",
+      "category": "Programming"
+    },
+    {
+      "error_code": "34:4469",
+      "title": "Parameter mismatch",
+      "cause": "Declaration range mismatch between formal/actual parameters",
+      "solution": "Use temporary static variable for parameter transfer",
+      "category": "Programming"
+    },
+    {
+      "error_code": "34:4485",
+      "title": "Comment order",
+      "cause": "Parameter exchange affecting comment assignment",
+      "solution": "Maintain parameter declaration order when commenting",
+      "category": "Programming"
+    },
+    {
+      "error_code": "88:47",
+      "title": "Module unreachable",
+      "cause": "PG connected to MPI when CPU requires PROFIBUS",
+      "solution": "Set MPI driver to PROFIBUS and connect via DP",
+      "category": "Communication"
+    },
+    {
+      "error_code": "256:24",
+      "title": "Environment error",
+      "cause": "Multiple SIMATIC Manager instances",
+      "solution": "Delete S7CacheA.dat/S7ser.dat in S7met directory",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:26",
+      "title": "OLE error",
+      "cause": [
+        "Insufficient disk space",
+        "Wrong DLL/Registry entries",
+        "Improper Windows installation"
+      ],
+      "solution": [
+        "Free disk space",
+        "Verify DLL versions and Registry",
+        "Reinstall Windows if needed"
+      ],
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:30",
+      "title": "SCL object deleted",
+      "cause": "Exported source deleted then reimported",
+      "solution": "Delete block in SIMATIC Manager before compiling",
+      "category": "Programming"
+    },
+    {
+      "error_code": "256:31",
+      "title": "Object not found",
+      "cause": "Criteria-specified object unavailable",
+      "solution": "Reorganize addresses with CTRL+ALT+F11",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:32",
+      "title": "Invalid objects",
+      "cause": "Lost link in project",
+      "solution": "Use 'Save As with Reorganization'",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:35",
+      "title": "Irreparable system error",
+      "cause": "Critical internal failure",
+      "solution": "Restart application/Windows or contact support",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:49",
+      "title": "Registry error",
+      "cause": "Invalid/missing registry entry during TeleService",
+      "solution": "Retry connection for better line quality",
+      "category": "Communication"
+    },
+    {
+      "error_code": "256:53",
+      "title": "Invalid pointer",
+      "cause": "PLCSIM simulation data mismatch",
+      "solution": "Create new simulation via Simulation > New PLC",
+      "category": "Programming"
+    },
+    {
+      "error_code": "256:56",
+      "title": "Internal system error",
+      "cause": "Possible project damage",
+      "solution": "Restart application/Windows or send project to support",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:57",
+      "title": "Programming error",
+      "cause": "Unrecoverable system error during programming",
+      "solution": "Check for ProjID.pro file after dearchiving",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:62",
+      "title": "Symlist.dbf error",
+      "cause": "Project damage from crash",
+      "solution": "Use 'Save as with consistency check' or recreate project",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:63",
+      "title": "Write protection",
+      "cause": "Files/data blocks write-protected",
+      "solution": "Ensure write access to directories/drives",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:68",
+      "title": "Object locked",
+      "cause": "Object opened by another application/user",
+      "solution": "Close other applications before reorganizing",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:85",
+      "title": "Naming format",
+      "cause": "Invalid name format in SIMATIC Manager",
+      "solution": "Use correct naming convention (e.g., VAT<digit>)",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:89",
+      "title": "Version incompatibility",
+      "cause": "Legacy XUTIL catalog from V2",
+      "solution": "Delete XUTIL directory in project path",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:92",
+      "title": "Read-only data",
+      "cause": [
+        "No write rights",
+        "Virus scanner interference",
+        "Data from write-protected medium"
+      ],
+      "solution": [
+        "Obtain write authorization",
+        "Disable virus scanner during STEP 7 operation",
+        "Remove write protection attributes"
+      ],
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:93",
+      "title": "Directory write rights",
+      "cause": "Write-protected directory or insufficient space",
+      "solution": "Remove write protection and ensure adequate disk space",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:94",
+      "title": "Offline folder issues",
+      "cause": "Incompatible options package versions",
+      "solution": "Check package versions and use 'Save as with reorganization'",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:100",
+      "title": "Missing authorization",
+      "cause": "No STEP 7 basic license installed",
+      "solution": "Install Basic Authorization",
+      "category": "System/Licensing",
+      "urgency": "Critical"
+    },
+    {
+      "error_code": "256:104",
+      "title": "Options package license",
+      "cause": "Missing options package authorization",
+      "solution": "Install from authorization disk or use emergency license",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:107",
+      "title": "Copy failure",
+      "cause": [
+        "Insufficient space",
+        "Target directory blocked",
+        "Object locked by another application"
+      ],
+      "solution": [
+        "Free up space",
+        "Wait and retry",
+        "Close other STEP 7 applications"
+      ],
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:111",
+      "title": "Access denied",
+      "cause": "Repeated program loading attempts",
+      "solution": "Start 'Server' service in Control Panel",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "256:119",
+      "title": "Version-specific license",
+      "cause": "Missing STEP 7 V4.x authorization or long path",
+      "solution": "Install correct license or shorten project path",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "257:5",
+      "title": "Server load failure",
+      "cause": "Missing/incompatible options package or mixed installation",
+      "solution": "Install required package or reinstall STEP 7",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "257:7",
+      "title": "Undeclared object type",
+      "cause": "Missing file for required object processing",
+      "solution": "Install needed options package",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "257:8",
+      "title": "Unrepresentable object",
+      "cause": "Object requiring uninstalled options package",
+      "solution": "Install missing S7 options package",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "257:9",
+      "title": "Unprocessable objects",
+      "cause": "Outdated/missing options package version",
+      "solution": "Install current options package version",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "257:24",
+      "title": "Environment creation",
+      "cause": "Multiple SIMATIC Manager instances or crash",
+      "solution": "Delete *.dat files in S7met directory",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "257:26",
+      "title": "Link insertion",
+      "cause": "Distorted links in project",
+      "solution": "Use 'Save as with reorganization'",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "257:79",
+      "title": "Project locked",
+      "cause": "Project opened by another application during reorganization",
+      "solution": "Close all applications before reorganizing",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "257:90",
+      "title": "Data structure error",
+      "cause": "Project damage from crash/power failure",
+      "solution": "Create reorganized copy via 'Save as'",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "257:94",
+      "title": "Data save error",
+      "cause": "Inconsistent project or storage shortage",
+      "solution": "Create reorganized copy and check disk space",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "258:1",
+      "title": "Project data inaccessible",
+      "cause": "IDB incorrectly defined as GDB",
+      "solution": "Correct symbol table definition or use 'Save as'",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "258:17",
+      "title": "Temporary directory exists",
+      "cause": "SDBDATA directory damaged by crash",
+      "solution": "Delete SDBDATA directory in S7TEMP",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "258:20",
+      "title": "Title field preservation",
+      "cause": "Title field specifications lost during archiving",
+      "solution": "Manually restore title fields after dearchiving",
+      "category": "System/Licensing"
+    },
+    {
+        "error_code": "25812",
+        "title": "Write-protected files or data blocks",
+        "cause": "Some files or data blocks are write-protected, possibly due to directory/drive access restrictions or intentional write-protection for reference purposes",
+        "solution": 
+        [
+         "Ensure you have write authorization for the drive or folder where the data is located",
+         "Close all STEP 7 and WinCC flex editors that might have blocks open",
+         "Check Task Manager for remaining S7 processes and close them",
+         "Delete project via 'File > Delete' in STEP 7 after closing all applications",
+         "If unsuccessful, delete project folder manually in Explorer at: '<Drive>\\Program Files\\Siemens\\Step7\\S7Proj\\<Project>'",
+         "Reboot PC if data areas weren't properly released",
+         "Use repair function from STEP 7 CD if files are damaged",
+         "For persistent issues, completely uninstall STEP 7 and clean registry as described in FAQ Entry ID 189025"
+        ],
+        "category": "System/Licensing"
+    },
+    {
+      "error_code": "275:5020",
+      "title": "Internal error in S7nlvblx.dll",
+      "cause": "Internal error in the file S7nlvblx.dll",
+      "solution": "Save your entries and close the application. Switch your computer off/on and restart the application. If the error reoccurs, contact your system administrator.",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "276:27",
+      "title": "No valid connection path",
+      "cause": "No valid connection path between local and remote partners (e.g. because of missing network connection or exhausted resources)",
+      "solution": "HotFix 1 for SP2 clears this problem. This error is still in SP3 at the moment, but will be cleared by another Add On.",
+      "category": "Network"
+    },
+    {
+      "error_code": "276:42",
+      "title": "Loopback connections not allowed",
+      "cause": "Loopback connections are not permitted",
+      "solution": "Problem (V4.02 and higher) is cleared with correction release K4.02.5. You can ignore this error message, because the communication functions despite this error message.",
+      "category": "Network"
+    },
+    {
+      "error_code": "276:5020",
+      "title": "Internal error occurred",
+      "cause": "Internal error (Call: AUTReloadObject)",
+      "solution": "N/A",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "288:48",
+      "title": "Unable to reach the module",
+      "cause": "Unable to reach the module (e.g. 413-2DP) by means of the subnet assigned to the programming device/PC",
+      "solution": "Under Properties in Options -> Set PG/PC interface, set the local user address to 0 (or the one configured previously).",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "289:2",
+      "title": "Database write-protected or insufficient memory",
+      "cause": "The data base is write-protected or there are not enough memory",
+      "solution": "XREF with V2.1.0 + standard control -> Correction K2.1.3 or higher",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "289:25",
+      "title": "Modules could not be translated back",
+      "cause": "Two modules could not be translated back",
+      "solution": "XREF with V2.1.0 + standard control -> Correction K2.1.3 or higher",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "289:35",
+      "title": "Button cannot be executed",
+      "cause": "The selected button can not be executed for the selected menu",
+      "solution": "Select the block folder and use Options > Reference Data > Display to print reference data for blocks.",
+      "category": "Programming"
+    },
+    {
+      "error_code": "291:416",
+      "title": "File occupied by another application",
+      "cause": "The file is occupied by another application for writing",
+      "solution": "Close all applications that have opened the symbol table and restart the function.",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "291:560",
+      "title": "Incorrect object ID",
+      "cause": "Internal error: Incorrect object ID. The symtabs function has failed - ambiguous entry in the symbol list for FC names",
+      "solution": "Delete the line for the FC in the symbol table or assign a different DB in the call.",
+      "category": "Programming"
+    },
+    {
+      "error_code": "291:1392",
+      "title": "No symbol table found",
+      "cause": "No symbol table found. No symbol could be created",
+      "solution": "N/A",
+      "category": "Programming"
+    },
+    {
+      "error_code": "292:19",
+      "title": "Error opening file",
+      "cause": "The file either has no valid B+C287trieve format or it is damaged",
+      "solution": "Replace the file or delete it",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "293:1",
+      "title": "Reference data could not be generated",
+      "cause": "The data medium is write-protected",
+      "solution": "Remove write-protection or check access rights under NT",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "293:2",
+      "title": "Reference data could not be generated for SFC14 or FC22",
+      "cause": "N/A",
+      "solution": "Use the function 'Save as' together with the option 'With Reorganization (slowly)'",
+      "category": "Programming"
+    },
+    {
+      "error_code": "294:6",
+      "title": "Unable to copy block",
+      "cause": "The OBxy is not supported by the CPU",
+      "solution": "Use another OBxy with similar function suitable for this CPU",
+      "category": "Programming"
+    },
+    {
+      "error_code": "294:23",
+      "title": "Unable to copy block - continue?",
+      "cause": "A block of this type already exists and it may not be overwritten",
+      "solution": "Delete the equivalent block in the ONLINE database and repeat the transfer",
+      "category": "Programming"
+    },
+    {
+      "error_code": "294:27",
+      "title": "Block being processed by another application",
+      "cause": "The block is being processed by another application or user",
+      "solution": "Create a copy of the last version saved or cancel the function",
+      "category": "Programming"
+    },
+    {
+      "error_code": "295:17248",
+      "title": "TS-Adapter transmission error",
+      "cause": "The order was interrupted to the TS-Adapter because of transmission error",
+      "solution": "Modify initialization string in TS adapter to match the modem",
+      "category": "Communication"
+    },
+    {
+      "error_code": "295:20484",
+      "title": "No compatible modem installed",
+      "cause": "There is not installed a modem which is compatible with teleservice",
+      "solution": "Install a suitable modem and set the modem to correspond with your configuration",
+      "category": "Communication"
+    },
+    {
+      "error_code": "295:20486",
+      "title": "TAPI-Order failure",
+      "cause": "Communication between PC and modem is not correct",
+      "solution": "Check connection between PC and modem for hardware/software faults",
+      "category": "Communication"
+    },
+    {
+      "error_code": "295:32768",
+      "title": "TAPI-subsystem error",
+      "cause": "TAPI-subsystem dues supply not expected error code <TAPI-Error-Code>",
+      "solution": "N/A",
+      "category": "Communication"
+    },
+    {
+      "error_code": "296:5309",
+      "title": "Instance data block variables mismatch",
+      "cause": "The variables of the instance data block which contain system attributes for messages are not agree with the variables in the function block",
+      "solution": "Check the function block and save it again if necessary",
+      "category": "Programming"
+    },
+    {
+      "error_code": "300:13",
+      "title": "Data basis could not be started",
+      "cause": "Occurs when a link is lost in the SYBASE database",
+      "solution": "Delete the file AMDBASE.LOG or restore the log file using dbsrv50 command",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "314:8",
+      "title": "Variable cannot be inserted",
+      "cause": "The name 'Ret_Val' has been assigned to a formal parameter",
+      "solution": "Rename the 'Ret_Val' parameter in the declaration line",
+      "category": "Programming"
+    },
+    {
+      "error_code": "724:21",
+      "title": "OM TD/OP: Data basis conflict",
+      "cause": "Versions of STEP 7 and ProTool are incompatible",
+      "solution": "Upgrade STEP 7 to V5.x or install V4.02 of ProTool",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "1230:1001",
+      "title": "Opening station failed",
+      "cause": "N/A",
+      "solution": "N/A",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "1230:2001",
+      "title": "Unable to insert object",
+      "cause": "Tried to slot an object that is not available",
+      "solution": "Select a valid object from the hardware catalog",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "1230:2009",
+      "title": "Changes cannot be made",
+      "cause": "Access to the object is not possible at the moment",
+      "solution": "Save changes in other applications and ensure sufficient memory",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "1230:2015",
+      "title": "Creating configuration data failed",
+      "cause": "Hard disk is full or folder is write-protected",
+      "solution": "Free disk space or remove write-protection from S7TMP folder",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "1230:2016",
+      "title": "No changes can be made in station",
+      "cause": "No more modules can be inserted in HW Config",
+      "solution": "Use 'Save as... with reorganization' for the project",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "1230:2018",
+      "title": "Another application made changes",
+      "cause": "Another S7 application has changed the station",
+      "solution": "Close and re-open the station",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "1230:3000",
+      "title": "System data could not be recreated",
+      "cause": "Configuration is inconsistent",
+      "solution": "Check consistency",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "2508:1099",
+      "title": "Error programming error diagnostic data",
+      "cause": "Group message with detailed messages following",
+      "solution": "Press 'Details' button and analyze detailed messages",
+      "category": "Diagnostics"
+    },
+    {
+      "error_code": "2517:5",
+      "title": "Application start error",
+      "cause": "Opening HIGRAPH source with incompatible software versions",
+      "solution": "Cleared with K4.01.2",
+      "category": "Programming"
+    },
+    {
+      "error_code": "2665:4156",
+      "title": "Configuration file needs recreation",
+      "cause": "Changes made to configuration require recreation",
+      "solution": "Use NetPro menu command 'Network > Save and Compile...'",
+      "category": "Network"
+    },
+    {
+      "error_code": "2760:11",
+      "title": "Communication to HIGRAPH failed",
+      "cause": "N/A",
+      "solution": "N/A",
+      "category": "Programming"
+    },
+    {
+      "error_code": "2775:777",
+      "title": "Address incorrect",
+      "cause": "Selected user address is already occupied",
+      "solution": "Select another address or connect to another subnetwork",
+      "category": "Network"
+    },
+    {
+      "error_code": "2775:785",
+      "title": "Bit rate not supported",
+      "cause": "187,5 kbit/s for MBK-P not supported in station",
+      "solution": "Edit file to use '187.5_supp =1' and execute Options -> UPDATE CATALOG",
+      "category": "Network"
+    },
+    {
+      "error_code": "2775:1829",
+      "title": "PG/PC interface value not saved",
+      "cause": "Parameter value could not be saved in database",
+      "solution": "N/A",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "2775:1860",
+      "title": "Active nodes warning",
+      "cause": "Other active nodes in station need reloading",
+      "solution": "N/A",
+      "category": "Network"
+    },
+    {
+      "error_code": "3020:13",
+      "title": "Invalid filename or project",
+      "cause": "Project stored on network drive with problematic path",
+      "solution": "Connect share without domain name (\\\\<Servername>\\<share>)",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "3020:25",
+      "title": "Projects cannot be archived",
+      "cause": "Blocked files preventing archiving",
+      "solution": "Stop SQL server or hmies.exe process if running",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "3020:47",
+      "title": "Processing status triggered by PKUnZip",
+      "cause": "Various situations during dearchiving",
+      "solution": "Most cases can be ignored; check archive file integrity",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "3020:49",
+      "title": "Unable to retrieve project",
+      "cause": "Archive file might be defective",
+      "solution": "Use original archiving program or repair with pkzipfix",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "3022:4121",
+      "title": "FB not available or invalid data type",
+      "cause": "Instance declaration missing or invalid data type",
+      "solution": "Delete and recreate SFBs, check block consistency",
+      "category": "Programming"
+    },
+    {
+      "error_code": "3280:503",
+      "title": "Registry database incorrect",
+      "cause": "Registry database not set up correctly for SIMATIC Manager",
+      "solution": "Reinstall STEP 7",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "3280:708",
+      "title": "Objects cannot be copied to older versions",
+      "cause": "No downward compatibility from V3 to V2.x",
+      "solution": "N/A",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "3280:709",
+      "title": "Write-protected medium",
+      "cause": "Project on write-protected medium",
+      "solution": "Remove write-protection or obtain write authorization",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "3280:712",
+      "title": "Invalid filename or project",
+      "cause": "Same as error 3020:13",
+      "solution": "See instructions for error 3020:13",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "3280:999",
+      "title": "Internet Explorer not installed",
+      "cause": "STEP 7 installed without Internet Explorer",
+      "solution": "Install Internet Explorer V4.0 and reinstall STEP 7",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "3531:1",
+      "title": "Diagnostic block creation failed",
+      "cause": "Standard blocks originate from PLC not library",
+      "solution": "Delete and reinsert SFBs/SFCs from library",
+      "category": "Diagnostics"
+    },
+    {
+      "error_code": "3534:63",
+      "title": "Internal error during system error reporting",
+      "cause": "N/A",
+      "solution": "Delete Diagnostics-FB49 and DB49, regenerate reference data",
+      "category": "Diagnostics"
+    },
+    {
+      "error_code": "3534:94",
+      "title": "Inconsistent hardware configuration",
+      "cause": "Hardware configuration inconsistent or unsaved changes",
+      "solution": "Make small change and recompile hardware configuration",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "4050:1",
+      "title": "Language resources missing",
+      "cause": "Resources file for language not installed",
+      "solution": "Install required language files or reinstall S7-PLCSIM",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "4050:2",
+      "title": "Closing CPU subwindow",
+      "cause": "Closing subwindow 'CPU' closes simulation session",
+      "solution": "Keep at least one subwindow open in S7-PLCSIM",
+      "category": "Programming"
+    },
+    {
+      "error_code": "4050:3",
+      "title": "MPI address change restriction",
+      "cause": "Cannot change MPI address with active connections",
+      "solution": "Close all associated applications or disconnect",
+      "category": "Network"
+    },
+    {
+      "error_code": "4050:4",
+      "title": "Single simulation restriction",
+      "cause": "Only one simulated automation system allowed",
+      "solution": "Opening second system closes first one",
+      "category": "Programming"
+    },
+    {
+      "error_code": "4050:5",
+      "title": "Cannot exit with active connections",
+      "cause": "Connection to STEP 7 still active",
+      "solution": "Close associated applications or clear connection",
+      "category": "Programming"
+    },
+    {
+      "error_code": "4050:6",
+      "title": "Overall reset warning",
+      "cause": "MRES deletes all blocks and resets memory",
+      "solution": "Click 'Yes' to continue or 'No' to abort",
+      "category": "Programming"
+    },
+    {
+      "error_code": "4050:7",
+      "title": "Simulation not available",
+      "cause": "Recently used simulation no longer available",
+      "solution": "Find program or recreate simulation",
+      "category": "Programming"
+    },
+    {
+      "error_code": "4050:100",
+      "title": "Invalid address format",
+      "cause": "Address format not supported by STEP 7",
+      "solution": "Enter address in supported format (IEC or SIMATIC)",
+      "category": "Programming"
+    },
+    {
+      "error_code": "4050:101",
+      "title": "Invalid value range",
+      "cause": "Entered value not in valid range for selected format",
+      "solution": "Enter value in valid format or change field format",
+      "category": "Programming"
+    },
+    {
+      "error_code": "4050:102",
+      "title": "Non-decimal value",
+      "cause": "Entered value is not a decimal number",
+      "solution": "Enter decimal number (e.g. 0, 1, 13)",
+      "category": "Programming"
+    },
+    {
+      "error_code": "4050:200",
+      "title": "Real CPU communication restriction",
+      "cause": "Cannot communicate with real CPUs during simulation",
+      "solution": "Close all simulation windows before going online",
+      "category": "Programming"
+    },
+    {
+      "error_code": "4299:158",
+      "title": "No connection to FM355/455",
+      "cause": "Old firmware on the FM",
+      "solution": "Upgrade the firmware of FM",
+      "category": "Communication"
+    },
+    {
+      "error_code": "4431:2011",
+      "title": "SIMATIC PDM authorization missing",
+      "cause": "Authorization for integrating SIMATIC PDM in STEP 7 missing",
+      "solution": "Install additional authorization for integration",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "4502:298",
+      "title": "System error 33",
+      "cause": "Possible incomplete or incorrect SDB load",
+      "solution": "Reset CPU module and reload hardware configuration",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "4502:625",
+      "title": "Error creating system SDBs",
+      "cause": "Missing .err files in RUL folder",
+      "solution": "Reinstall STEP 7 or copy missing files from another computer",
+      "category": "Hardware Configuration"
+    },
+    {
+      "error_code": "D033",
+      "title": "Protocol job jam on CPU",
+      "cause": "N/A",
+      "solution": "Increase communications load setting for CPU in HW Config",
+      "category": "Communication"
+    },
+    {
+      "error_code": "D042",
+      "title": "Error during module status notice",
+      "cause": "PQW is being monitored",
+      "solution": "Monitor values with VAT and wait for new CPUs",
+      "category": "Diagnostics"
+    },
+    {
+      "error_code": "D043",
+      "title": "Reference order not available",
+      "cause": "Too many control jobs sent to CPU",
+      "solution": "Acknowledge message and reduce control job frequency",
+      "category": "Communication"
+    },
+    {
+      "error_code": "D062",
+      "title": "Resources error",
+      "cause": "Job list too full",
+      "solution": "See error message 33:53346",
+      "category": "System/Licensing"
+    },
+    {
+      "error_code": "D064",
+      "title": "CPU 300 trigger events buildup",
+      "cause": "CPU 300 does not delete trigger events",
+      "solution": "Switch CPU off/on. Problem cleared in newer CPUs",
+      "category": "Diagnostics"
+    },
+    {
+      "error_code": "D0AA",
+      "title": "Time limit exceeded",
+      "cause": "Communications load too high",
+      "solution": "Increase CPU communications load from 20% to 50%",
+      "category": "Communication"
+    },
+    {
+      "error_code": "D204",
+      "title": "Coordination rules error",
+      "cause": "Variable table still open online during system data load",
+      "solution": "Close variable table and retransfer system data",
+      "category": "Programming"
+    },
+    {
+      "error_code": "D20C",
+      "title": "OB cannot be copied",
+      "cause": "Belonging layer not available",
+      "solution": "Rename OB or delete in OFFLINE database and retransfer",
+      "category": "Programming"
+    },
+    {
+      "error_code": "D240",
+      "title": "Coordination rules error",
+      "cause": "Block to be overwritten is still being accessed",
+      "solution": "Deactivate 'Call path with test/call environment' setting",
+      "category": "Programming"
+    },
+    {
+      "error_code": "D280",
+      "title": "Compilation error in S7-300",
+      "cause": "Defined variable outside CPU power range",
+      "solution": "Check addresses with variable definitions",
+      "category": "Programming"
+    },
+    {
+      "error_code": "D406",
+      "title": "Requested information not available",
+      "cause": "Number of possible connections exceeded",
+      "solution": "Check connections and reduce where appropriate",
+      "category": "Communication"
+    },
+    {
+      "error_code": "EA02",
+      "title": "Protocol incompatibility",
+      "cause": "Communication software and interface module protocols not compatible",
+      "solution": "Upgrade CP 443-5 to version >V2.7",
+      "category": "Communication"
+    },
+    {
+      "error_code": "None",
+      "title": "Profibus/MPI Network diagnostic error",
+      "cause": "Requested parameter could not be read from register data basis",
+      "solution": "Firmware/driver error - resolved in SOFTNET PROFIBUS S7 V5.0",
+      "category": "Network"
+    },
+    {
+      "error_code": "S7OTBLSTX",
+      "title": "Incompatible versions",
+      "cause": "S7OTBLDX.DLL and S7OTBLSX.DLL version mismatch",
+      "solution": "Close all S7 applications and restart SETUP",
+      "category": "System/Licensing"
+    }
+  ]
+}
